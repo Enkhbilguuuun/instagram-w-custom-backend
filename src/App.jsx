@@ -9,17 +9,12 @@ import Home from "./component/Home";
 import ProRouter from "./component/profile/ProRouter";
 export const NavbarChange = createContext();
 export const instance = axios.create({
-  baseURL: "http://localhost:7000/users",
+  baseURL: "http://localhost:8000",
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
 });
-export const instanceTwo = axios.create({
-  baseURL: "http://localhost:7000/posts",
-  headers: {
-    "Content-type": "application/json; charset=UTF-8",
-  },
-});
+
 
 function App() {
   const [navbar, setNavbar] = useState(false);

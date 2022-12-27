@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import PostOne from "./PostOne";
-import { instanceTwo } from "../../App";
+import { instance, instanceTwo } from "../../App";
 
 const Post = () => {
-  const [post, setPost] = useState([]);
+  const [data, setData] = useState([]);
   const getData = async () => {
-    const res = await instanceTwo.get(``);
-    setPost(res.data.posts);
-    console.log(res);
+    const res = await instance.get(`/posts`);
+    setData(res.data);
+    console.log(data);
   };
 
   useEffect(() => {
@@ -16,9 +16,9 @@ const Post = () => {
   }, []);
   return (
     <div className="postContainer">
-      {post &&
-        post.map((e) => {
-          return <PostOne value={e} />;
+      {data &&
+        data.map((data) => {
+          return <PostOne data={data} />;
         })}
     </div>
   );

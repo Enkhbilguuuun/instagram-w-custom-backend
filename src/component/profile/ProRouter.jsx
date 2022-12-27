@@ -8,7 +8,7 @@ const ProRouter = () => {
   const params = useParams();
 
   const getData = async (id) => {
-    const response = await instance.get(`/${id}`);
+    const response = await instance.get(``);
     setData(response.data.users);
   };
   

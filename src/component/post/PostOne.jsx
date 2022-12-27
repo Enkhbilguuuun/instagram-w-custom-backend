@@ -1,15 +1,15 @@
 import bg from "./assetsPost/bg.jpeg";
 import PostTwo from "./PostTwo";
 import { Link } from "react-router-dom";
-const PostOne = ({ value }) => {
+const PostOne = ({ data }) => {
   return (
-    <Link to={`${value.id}`} style={{ textDecoration: "none", color: "black" }}>
+    <Link to={`${data.id}`} style={{ textDecoration: "none", color: "black" }}>
       <div className="postOne">
         <div className="postProfile">
           <PostTwo />
         </div>
         <div className="postImage">
-          <img src={bg} alt="" className="postImage" />
+          <img src={data.img} alt="" className="postImage" />
         </div>
         <div className="miniContain">
           {" "}
@@ -78,10 +78,10 @@ const PostOne = ({ value }) => {
               >
                 <div>Liked by </div>
                 <div style={{ fontWeight: "700", marginLeft: "5px" }}>
-                  {value.reactions}
+                  {data.likes}
                 </div>
               </div>
-              <div className="postTitle">{value.title}</div>
+              <div className="postTitle">{data.context}</div>
             </div>
             <div className="postInput">
               <input

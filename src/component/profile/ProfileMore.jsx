@@ -8,7 +8,7 @@ const ProfileMore = () => {
   const [pic, setPic] = useState([]);
 
   const getData = async () => {
-    const response = await instance.get(`?limit=6`);
+    const response = await instance.get(``);
     setData(response.data.users);
     setPic(response.data.users[0]);
   };
